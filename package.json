@@ -2,38 +2,36 @@
   "name": "mainjsproject",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": ".eslintrc.js",
   "scripts": {
-    "eslint": "npx eslint .",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install"
+    "build": "webpack --config webpack.config.js",
+    "lint": "eslint ./src",
+    "lint:fix": "eslint ./src --fix"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "eslint": "^8.48.0",
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/parser": "^6.6.0",
+    "css-loader": "^6.8.1",
+    "eslint": "^8.49.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-html": "^7.1.0",
     "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-prettier": "^5.0.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^14.0.1",
+    "eslint-plugin-react": "^7.33.2",
+    "html-webpack-plugin": "^5.5.3",
     "prettier": "^3.0.3",
+    "sass": "^1.66.1",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3",
     "webpack": "^5.88.2",
     "webpack-cli": "^5.1.4"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,json,css,md,html}": [
-      "prettier --single-quote --write",
-      "git add"
-    ]
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
